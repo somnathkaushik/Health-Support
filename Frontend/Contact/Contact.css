@@ -1,7 +1,7 @@
 body{
-  background-image: url("https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGNvbnRhY3QlMjB1c3xlbnwwfHwwfHx8MA%3D%3D");
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsLKghAYxZq7TxGU8hdeIeJfznswnrn-YUtQ&s");
   background-repeat: no-repeat;
-    background-size: 100% 35%;
+    background-size: 100% 25%;
 }
 
   
@@ -73,7 +73,7 @@ body.light .navbar {
 .toggle-theme {
   position: fixed;
   bottom: 20px; /* Set distance from bottom */
-  right: 20px;  /* Set distance from right */
+  left: 20px;  /* Set distance from right */
   height: 50px; /* Button height */
   width: 50px;  /* Button width */
   background-color: #f0f0f0; /* Button background color */

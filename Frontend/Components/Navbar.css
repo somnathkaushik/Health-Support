@@ -1,3 +1,9 @@
+
+body {
+    user-select: none;
+}
+
+
 nav {
     /* background-color: #333; */
     color: #fff;
@@ -52,4 +58,22 @@ nav {
 }
 .dimskyblue{
     background-color: #bae6fd;
+}
+
+
+#menu{
+    z-index: 500;
+    position: fixed;
+    width: 100%;
+}
+li:hover{
+    /* background-color: #505050; */
+}
+#menu li{
+    height: 40px;
+}
+#menu li a{
+    text-align: center;
+    padding: auto auto;
+    justify-items: center;
 }

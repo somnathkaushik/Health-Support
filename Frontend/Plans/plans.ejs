@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, 
+				initial-scale=1.0">
+    <!-- Adding Logo to web page  -->
+    <link rel="icon" href="../Images/logo1.png">
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    
+    <!-- Linking other css files -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../Components/Navbar.css">
+    <link rel="stylesheet" href="../Components/Banner.css">
+    <link rel="stylesheet" href="../Components/Footer.css">
+    <link rel="stylesheet" href="../Components/Cursor.css">
+    <link rel="stylesheet" href="plans.css">
+    <link rel="stylesheet" href="/public/style.css">
+
+    <!-- Linking Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+    <title>Health Support</title>
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+    <!-- <link rel="stylesheet" href="responsive.css"> -->
+</head>
+
+<body class="dimskyblue" id="content">
+
+
+
+    <!-- Navbar -->
+    <nav class="darkable skyblue p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center text-white text-xl font-bold">
+                <img id="nav-logo" src="../Images/logo4-removebg-preview.png"
+                    alt="Logo" class="w-10 h-8 mr-2">
+                
+            </a>
+
+            <!--  Hamburger Menu Button -->
+            <button class="text-white focus:outline-none lg:hidden" id="menu-btn">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path id="menu-icon-line1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16"></path>
+                    <path id="menu-icon-line2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 12h16"></path>
+                    <path id="menu-icon-line3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Navbar Links -->
+            <ul class="hidden lg:flex space-x-4">
+                <li><a href="/" class="nav-link text-white ">Home</a></li>
+                <li><a href="#" class="nav-link text-white ">Plans</a></li>
+                <li><a href="/resources" class="darkable  nav-link text-white ">Resources</a>
+                </li>
+                <li><a href="/contact" class="nav-link text-white ">Contact</a></li>
+                <li><a href="/products" class="darkable  nav-link text-white ">Products</a></li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Responsive Menu -->
+    <div class="lg:hidden hidden" id="menu">
+        <ul class="bg-gray-800 p-2 text-center">
+            <li><a href="/" class="block text-white py-2">Home</a></li>
+            <li><a href="#" class="block text-white py-2">Plans</a></li>
+            <li><a href="/resources" class="darkable  nav-link text-white ">Resources</a>
+            </li>
+            <li><a href="/contact" class="block text-white py-2">Contact</a></li>
+            <li><a href="/products" class="darkable  nav-link text-white ">Products</a></li>
+
+        </ul>
+    </div>
+
+    <script>
+        // Toggle menu visibility with animation and change icon
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+
+            // Rotate hamburger icon and change its appearance
+            var icon = document.getElementById('menu-icon');
+            icon.classList.toggle('rotate');
+
+            var line1 = document.getElementById('menu-icon-line1');
+            var line2 = document.getElementById('menu-icon-line2');
+            var line3 = document.getElementById('menu-icon-line3');
+
+            if (menu.classList.contains('hidden')) {
+                line1.setAttribute('d', 'M4 6h16');
+                line2.setAttribute('d', 'M4 12h16');
+                line3.setAttribute('d', 'M4 18h16');
+            } else {
+                line1.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                line2.setAttribute('d', 'M6 6l12 12');
+                line3.setAttribute('d', 'M6 6l12 12');
+            }
+        });
+    </script>
+
+
+
+
+
+    <!-- Banner -->
+    <div class="darkable banner" id="step-two">
+        <p>Contact Dr. Somnath Kaushik For Consultancy On Health Support Plans <a
+                href="mailto:somnath.kaushik_cs21@gla.ac.in">
+                <d>somnath.kaushik_cs21@gla.ac.in</d>
+            </a></p>
+        <button id="closeBanner">X</button>
+    </div>
+
+    <!-- Content (for spacing) -->
+    <div style="height: 1000px;">
+        <!-- This is just to create some space so the banner doesn't cover content -->
+    </div>
+
+    <script>
+        // JavaScript to handle banner removal
+        document.getElementById('closeBanner').addEventListener('click', function () {
+            var banner = document.querySelector('.banner');
+            banner.style.display = 'none';
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <!-- Dropdown button -->
+    <div class=" darkable relative monuBhaiyaOne skyblue ">
+        <div class=" text-white font-semibold py-2 px-4 rounded absolute top-0 right-0">
+            <button id="dropdownBtn "
+                class=" darkable boder skyblue text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center "
+                onclick="toggleDropdown()">
+                <span class="" id="selectedLanguage">Heart</span> <!-- Updated default selected language -->
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path
+                        d="M10 12.586l-4.293-4.293a1 1 0 0 1 1.414-1.414L10 10.758l3.879-3.879a1 1 0 0 1 1.414 1.414l-4.586 4.586a1 1 0 0 1-1.414 0z" />
+                </svg>
+            </button>
+            <ul id="dropdownOptions" class="darkable absolute hidden text-gray-700 pt-1">
+                <li><a class="darkable darkhower  rounded-t bg-white hower py-2 px-4 block whitespace-no-wrap"
+                        onclick="showJava()">Heart</a></li>
+                <li><a class="darkable darkhower bg-white hower py-2 px-4 block whitespace-no-wrap"
+                        onclick="showPython()">Brain</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content for Heart -->
+    <div id="javaContent" class="content darkable ">
+        <!-- Heart content goes here -->
+
+
+        <!-- ------------------------Monu Bhaiya Ka Pack--------------------------------- -->
+
+
+        <section class="text-gray-600 body-font overflow-hidden ">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                    <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+                        <h2 class="text-sm title-font text-gray-500 tracking-widest font-medium"><c>Advance Heart checkUp</c>
+                        </h2>
+                        <h1 class="text-gray-900 text-3xl title-font font-medium mb-4 darkable ">Echocardiogram
+                        </h1>
+                        <div class="darkable flex relative mb-4">
+                            <a id="descriptionLink"
+                                class="flex-grow textskyblue border-b-2 border-gray-300 py-2 text-lg px-1 active-link">Summary</a>
+                            <a id="reviewsLink" class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">
+                                Highlights</a>
+                            <a id="detailsLink"
+                                class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">Comparison</a>
+                            <span id="activeLine"
+                                class="absolute h-1 skyblue bottom-0 left-0 transition-transform duration-300 w-36"></span>
+                        </div>
+                        <div class="darkable  bg-white px-2 pb-2 rounded-lg">
+                            <div id="descriptionContent" class="leading-relaxed mb-4 mx-4 text-xs">
+                                <p>
+                                    <!-- <h1 class="text-gray-900 text-xl underline">Summary :</h1> -->
+                                    An echocardiogram, also known as a cardiac echo or simply an echo, is a noninvasive medical imaging technique that uses ultrasound to examine the heart and nearby blood vessels. It's a common test used to evaluate and monitor heart conditions, and can help a healthcare provider diagnose heart problems.
+                                    During an echocardiogram, a small probe is used to send out high-frequency sound waves that create echoes when they bounce off different parts of the body. The sound waves create pictures of the beating heart, showing how blood flows through the heart and heart valves. Sensors attached to the chest and sometimes the legs may also check the heart rhythm. 
+There are different types of echocardiograms, including transesophageal, stress, and those that involve contrast injections. Each type of echocardiogram has different risks, such as allergic reactions to contrast dyes, irritation from the tube used in a transesophageal echocardiogram, or an irregular heartbeat from medication or exercise used in a stress echocardiogram.<br>
+
+                                    <br>
+                                </p>
+                                <div class="flex border-t border-gray-200 py-2">
+                                    <span class="text-gray-500">Doctors
+                                    </span>
+                                    <span class="ml-auto text-gray-900">Kartik Sapra, Rishab Kapoor</span>
+                                </div>
+                                <div class="flex border-t border-gray-200 py-2">
+                                    <span class="text-gray-500">Pack Language</span>
+                                    <span class="ml-auto text-gray-900">English</span>
+                                </div>
+                                <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                                    <span class="text-gray-500">
+                                        <div class="my-4 flex items-center relative" data-v-4482dcad=""
+                                            data-v-d561662a="">
+                                            <span class="pos-rating orange mr-2" data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span><span class="pos-rating orange mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span><span class="pos-rating orange mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span><span class="pos-rating orange mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span> <span class="neg-rating mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_unfilled.svg"
+                                                    data-v-4482dcad=""></span> <span class="ml-3" data-v-4482dcad=""
+                                                data-v-d561662a="">
+
+                                            </span>
+                                        </div>
+                                    </span>
+                                    <span class="ml-auto text-gray-900">
+                                        <div class="my-4 flex items-center relative" data-v-4482dcad=""
+                                            data-v-d561662a="">
+
+                                            <span class="ml-3" data-v-4482dcad="" data-v-d561662a="">
+                                                <b data-v-4482dcad="" data-v-d561662a="">4.56/5.0,</b>
+                                                299 ratings
+                                            </span>
+                                        </div>
+                                    </span>
+                                </div>
+
+
+
+                                <div class="flex">
+                                    <span class="title-font font-medium text-2xl text-gray-900 darkable ">₹1725/-</span>
+                                    <button
+                                        class="flex ml-auto text-white skyblue border-0 py-2 px-6 focus:outline-none hower rounded">
+                                        <a href="#">Enroll Now</a> 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="darkable  bg-white px-2 pb-2 rounded-lg">
+                            <div id="reviewsContent" class="leading-relaxed mb-4" style="display: none;">
+                                <!-- Pack Highlights content here -->
+                                <p>
+                                <h1 class="darkable text-gray-900 text-xl underline">Pack Highlights:</h1>
+                                • Extensive Heart Structures & Algorithmic Coverage<br>
+                                • 300+ CheckUps<br>
+                                • Easy Treatment for Complex Problems<br>
+                                • Lifetime Warranty<br>
+                                • Advanced Treatment<br>
+                                • Expert Available for 6 months.<br>
+                                </p>
+                                <div class="flex mt-8 border-t-2 border-gray-300 py-2 pt-8">
+                                    <span class="darkable title-font font-medium text-2xl text-gray-900">₹1725/-</span>
+                                    <button
+                                        class="flex ml-auto text-white skyblue border-0 py-2 px-6 focus:outline-none boder hower rounded"><a href="#">Enroll Now</a> 
+                                        </button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="darkable  bg-white px-2 pb-2 rounded-lg">
+                            <div id="detailsContent" class="leading-relaxed mb-4" style="display: none;">
+                                <!-- Comparision content here -->
+                                <p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Pack Comparison</th>
+                                            <th>Heart Fundamentals</th>
+                                            <th>Algo.Heart</th>
+                                            <th>Interview Preparation Heart</th>
+                                            <th>Heart Crux Master Pack</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Heart Basics</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Heart Structures</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Algorithms</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Heart Collections</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Non Medical Topics</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </p>
+
+                                <div class="flex mt-8 border-t-2 border-gray-300 py-2 pt-8">
+                                    <span class="darkable title-font font-medium text-2xl text-gray-900">₹1725/-</span>
+                                    <button
+                                        class="flex ml-auto text-white skyblue border-0 py-2 px-6 focus:outline-none boder hower rounded"><a href="#">Enroll Now</a> 
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img alt="ecommerce" class="lg:w-1/2 w-100 lg:h-auto h-64  object-center rounded"
+                        src="../Images/Java.png">
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const descriptionLink = document.getElementById("descriptionLink");
+                const reviewsLink = document.getElementById("reviewsLink");
+                const detailsLink = document.getElementById("detailsLink");
+                const activeLine = document.getElementById("activeLine");
+
+                const descriptionContent = document.getElementById("descriptionContent");
+                const reviewsContent = document.getElementById("reviewsContent");
+                const detailsContent = document.getElementById("detailsContent");
+
+                // Show description by default
+                descriptionContent.style.display = "block";
+                reviewsContent.style.display = "none";
+                detailsContent.style.display = "none";
+
+                // Set initial position of the active line
+                activeLine.style.transform = "translateX(0)";
+
+                descriptionLink.addEventListener("click", function () {
+                    if (!descriptionLink.classList.contains("active-link")) {
+                        descriptionContent.style.display = "block";
+                        reviewsContent.style.display = "none";
+                        detailsContent.style.display = "none";
+
+                        // Move active line to description
+                        activeLine.style.transform = "translateX(0)";
+
+                        // Update link colors
+                        descriptionLink.classList.add("active-link");
+                        reviewsLink.classList.remove("active-link");
+                        detailsLink.classList.remove("active-link");
+
+                        // Make description link color black
+                        descriptionLink.classList.remove("inactive-link");
+                        reviewsLink.classList.add("inactive-link");
+                        detailsLink.classList.add("inactive-link");
+                    }
+                });
+
+                reviewsLink.addEventListener("click", function () {
+                    if (!reviewsLink.classList.contains("active-link")) {
+                        descriptionContent.style.display = "none";
+                        reviewsContent.style.display = "block";
+                        detailsContent.style.display = "none";
+
+                        // Move active line to reviews
+                        activeLine.style.transform = "translateX(100%)";
+
+                        // Update link colors
+                        descriptionLink.classList.remove("active-link");
+                        reviewsLink.classList.add("active-link");
+                        detailsLink.classList.remove("active-link");
+
+                        // Make reviews link color black
+                        descriptionLink.classList.add("inactive-link");
+                        reviewsLink.classList.remove("inactive-link");
+                        detailsLink.classList.add("inactive-link");
+                    }
+                });
+
+                detailsLink.addEventListener("click", function () {
+                    if (!detailsLink.classList.contains("active-link")) {
+                        descriptionContent.style.display = "none";
+                        reviewsContent.style.display = "none";
+                        detailsContent.style.display = "block";
+
+                        // Move active line to details
+                        activeLine.style.transform = "translateX(200%)";
+
+                        // Update link colors
+                        descriptionLink.classList.remove("active-link");
+                        reviewsLink.classList.remove("active-link");
+                        detailsLink.classList.add("active-link");
+
+                        // Make details link color black
+                        descriptionLink.classList.add("inactive-link");
+                        reviewsLink.classList.add("inactive-link");
+                        detailsLink.classList.remove("inactive-link");
+                    }
+                });
+            });
+        </script>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!------------------------------------ Content for Brain -------------------------------------------->
+    <div id="pythonContent" class="content" style="display: none;">
+
+
+
+
+
+        <!-- ------------------Brain Ka Pack----------------- -->
+
+
+
+
+        <section class="darkable text-gray-600 body-font overflow-hidden ">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                    <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+                        <h2 class="darkable text-sm title-font text-gray-500 tracking-widest">
+                            <c class=" font-medium ">Learn Brain for Web Development, Heart Science & ML </c>
+
+                        </h2>
+                        <h1 class="darkable text-gray-900 text-3xl title-font font-medium mb-4">Brain for Developers Master
+                            Pack
+                        </h1>
+                        <div class="darkable flex relative mb-4">
+                            <a id="descriptionLink1"
+                                class="flex-grow textskyblue border-b-2 border-gray-300 py-2 text-lg px-1 active-link">Summary</a>
+                            <a id="reviewsLink1" class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">
+                                Highlights</a>
+                            <a id="detailsLink1"
+                                class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">Comparison</a>
+                            <span id="activeLine1"
+                                class="absolute h-1 skyblue bottom-0 left-0 transition-transform duration-300 w-36"></span>
+                        </div>
+                        <div class="darkable  bg-white px-2 pb-2 rounded-lg">
+                            <div id="descriptionContent1" class="leading-relaxed mb-4 mx-4 text-xs">
+                                <p>
+                                    <!-- <h1 class="text-gray-900 text-xl underline">Summary :</h1> -->
+                                    First of its kind, our Brain online for Developers is a uniquely designed online
+                                    course in Brain to aid your journey right from the beginning to the very end in
+                                    becoming the most skilled software engineers across the globe. Our online course in
+                                    Brain is not only in absolute coherence with our most sought after classroom
+                                    program, but also provides you the comfort of learning at your home. With over 50
+                                    video lectures, all our doubt classes will also be held live on our own online
+                                    platform so as to provide the students with the most effective doubt solving, in a
+                                    one-to-one conversational format. This online training in Brain includes basic
+                                    programming fundamentals, object oriented programming (OOPs) and in-depth coverage
+                                    of data structures in Brain. Through these online classes, the students will not
+                                    only become more efficient with their solutions by optimizing space and time but
+                                    this course will also provide them a firm base to excel in all their programming
+                                    interviews. The core focus of these Brain classes for beginners is to maintain an
+                                    equilibrium between theory and practical, thus providing the programmers with an
+                                    ample amount of practice of questions based on different programming techniques. Not
+                                    just programming exercises, this course gives you kickstart in Brain Development by
+                                    introducing python for web - working with web API's, building chatbots, creating
+                                    apps using flask and Diagnosis and Brain for Heart Science. In the end of the course we
+                                    also cover automation using selenium which you can use automate boring tasks in
+                                    Brain.<br>
+
+                                    <br>
+                                </p>
+                                <div class="flex border-t border-gray-200 py-2">
+                                    <span class="text-gray-500">Doctors
+                                    </span>
+                                    <span class="ml-auto text-gray-900">Jatin Katyal, Prateek Narang</span>
+                                </div>
+                                <div class="flex border-t border-gray-200 py-2">
+                                    <span class="text-gray-500">Pack Language</span>
+                                    <span class="ml-auto text-gray-900">English</span>
+                                </div>
+                                <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                                    <span class="text-gray-500">
+                                        <div class="my-4 flex items-center relative" data-v-4482dcad=""
+                                            data-v-d561662a="">
+                                            <span class="pos-rating orange mr-2" data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span><span class="pos-rating orange mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span><span class="pos-rating orange mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span><span class="pos-rating orange mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_filled.svg"
+                                                    data-v-4482dcad=""></span> <span class="neg-rating mr-2"
+                                                data-v-4482dcad=""><img
+                                                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_unfilled.svg"
+                                                    data-v-4482dcad=""></span> <span class="ml-3" data-v-4482dcad=""
+                                                data-v-d561662a="">
+
+                                            </span>
+                                        </div>
+                                    </span>
+                                    <span class="ml-auto text-gray-900">
+                                        <div class="my-4 flex items-center relative" data-v-4482dcad=""
+                                            data-v-d561662a="">
+
+                                            <span class="ml-3" data-v-4482dcad="" data-v-d561662a="">
+                                                <b data-v-4482dcad="" data-v-d561662a="">4.48/5.0,</b>
+                                                384 ratings
+                                            </span>
+                                        </div>
+                                    </span>
+                                </div>
+
+
+
+                                <div class="flex">
+                                    <span class="darkable title-font font-medium text-2xl text-gray-900">₹2100/-</span>
+                                    <button
+                                        class="flex ml-auto text-white skyblue border-0 py-2 px-6 focus:outline-none hower boder rounded">
+                                        <a href="#">Enroll Now</a>
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="darkable  bg-white px-2 pb-2 rounded-lg">
+                            <div id="reviewsContent1" class="leading-relaxed mb-4" style="display: none;">
+                                <!-- Pack Highlights content here -->
+                                <p>
+                                <h1 class="text-gray-900 text-xl underline">Pack Highlights:</h1>
+                                • Detailed concept videos of Brain Topics<br>
+                                • Extensive coverage of framework<br>
+                                • Lessons on Deploying your Application<br>
+                                • 10 projects using Brain<br>
+                                • Expert Doubt Support for 6 months(only for Premium version).<br>
+                                </p>
+                                <div class="flex mt-8 border-t-2 border-gray-300 py-2 pt-8">
+                                    <span class="darkable title-font font-medium text-2xl text-gray-900">₹2100/-</span>
+                                    <button
+                                        class="flex ml-auto boder text-white skyblue border-0 py-2 px-6 focus:outline-none hower rounded"><a href="#">Enroll Now</a>
+                                        </button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="darkable  bg-white px-2 pb-2 rounded-lg">
+                            <div id="detailsContent1" class="leading-relaxed mb-4" style="display: none;">
+                                <!-- Comparision content here -->
+                                <p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Topics/Courses</th>
+                                            <th>Brain Fundamentals</th>
+                                            <th>Brain for Heart Science</th>
+                                            <th>Brain Diagnosis</th>
+                                            <th>Brain for Developers Master</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Brain Basics</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Async Programming in Brain</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Intermediate Brain</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Heart Science Libraries</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Brain for Web (BS, Requests, Flask)</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Brain Chatbots</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Brain Automation</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Machine Learning Introduction</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Web Apps in Flask</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Git/Github</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Backend Development</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Deploying ML Models</td>
+                                            <td>❌</td>
+                                            <td>✅ (Flask)</td>
+                                            <td>✅ (Diagnosis)</td>
+                                            <td>✅ (Flask+Diagnosis)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>REST API's</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Projects</td>
+                                            <td>❌</td>
+                                            <td>4 Mini Projects</td>
+                                            <td>5 Diagnosis Projects</td>
+                                            <td>10 Mini Projects</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Capstone Project</td>
+                                            <td>Brain Game</td>
+                                            <td>Face Recogntion</td>
+                                            <td>Social Media Platform</td>
+                                            <td>Social Media Platform</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pre-requsites</td>
+                                            <td>-</td>
+                                            <td>Brain Basics</td>
+                                            <td>Programming in C++/Heart</td>
+                                            <td>Programming in C++/Heart</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Addons</td>
+                                            <td>Practice Problems</td>
+                                            <td>Heart Science Challenges</td>
+                                            <td>Coming Soon</td>
+                                            <td>Coming Soon</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </p>
+
+                                <div class="flex mt-8 border-t-2 border-gray-300 py-2 pt-8">
+                                    <span class="darkable title-font font-medium text-2xl text-gray-900">₹2100/-</span>
+                                    <button
+                                        class="flex ml-auto text-white skyblue border-0 py-2 px-6 focus:outline-none hower boder rounded"><a href="#">Enroll Now</a>
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img alt="ecommerce" class="lg:w-1/2 w-80 lg:h-auto h-64  object-center rounded"
+                        src="../Images/python.png">
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const descriptionLink1 = document.getElementById("descriptionLink1");
+                const reviewsLink1 = document.getElementById("reviewsLink1");
+                const detailsLink1 = document.getElementById("detailsLink1");
+                const activeLine1 = document.getElementById("activeLine1");
+
+                const descriptionContent1 = document.getElementById("descriptionContent1");
+                const reviewsContent1 = document.getElementById("reviewsContent1");
+                const detailsContent1 = document.getElementById("detailsContent1");
+
+                // Show description by default
+                descriptionContent1.style.display = "block";
+                reviewsContent1.style.display = "none";
+                detailsContent1.style.display = "none";
+
+                // Set initial position of the active line
+                activeLine1.style.transform = "translateX(0)";
+
+                descriptionLink1.addEventListener("click", function () {
+                    if (!descriptionLink1.classList.contains("active-link")) {
+                        descriptionContent1.style.display = "block";
+                        reviewsContent1.style.display = "none";
+                        detailsContent1.style.display = "none";
+
+                        // Move active line to description
+                        activeLine1.style.transform = "translateX(0)";
+
+                        // Update link colors
+                        descriptionLink1.classList.add("active-link");
+                        reviewsLink1.classList.remove("active-link");
+                        detailsLink1.classList.remove("active-link");
+
+                        // Make description link color black
+                        descriptionLink1.classList.remove("inactive-link");
+                        reviewsLink1.classList.add("inactive-link");
+                        detailsLink1.classList.add("inactive-link");
+                    }
+                });
+
+                reviewsLink1.addEventListener("click", function () {
+                    if (!reviewsLink1.classList.contains("active-link")) {
+                        descriptionContent1.style.display = "none";
+                        reviewsContent1.style.display = "block";
+                        detailsContent1.style.display = "none";
+
+                        // Move active line to reviews
+                        activeLine1.style.transform = "translateX(100%)";
+
+                        // Update link colors
+                        descriptionLink1.classList.remove("active-link");
+                        reviewsLink1.classList.add("active-link");
+                        detailsLink1.classList.remove("active-link");
+
+                        // Make reviews link color black
+                        descriptionLink1.classList.add("inactive-link");
+                        reviewsLink1.classList.remove("inactive-link");
+                        detailsLink1.classList.add("inactive-link");
+                    }
+                });
+
+                detailsLink1.addEventListener("click", function () {
+                    if (!detailsLink1.classList.contains("active-link")) {
+                        descriptionContent1.style.display = "none";
+                        reviewsContent1.style.display = "none";
+                        detailsContent1.style.display = "block";
+
+                        // Move active line to details
+                        activeLine1.style.transform = "translateX(200%)";
+
+                        // Update link colors
+                        descriptionLink1.classList.remove("active-link");
+                        reviewsLink1.classList.remove("active-link");
+                        detailsLink1.classList.add("active-link");
+
+                        // Make details link color black
+                        descriptionLink1.classList.add("inactive-link");
+                        reviewsLink1.classList.add("inactive-link");
+                        detailsLink1.classList.remove("inactive-link");
+                    }
+                });
+            });
+        </script>
+
+
+
+    </div>
+
+    <script>
+        // Show Heart content by default
+        document.getElementById('javaContent').style.display = 'block';
+
+        // Function to toggle visibility of dropdown options
+        function toggleDropdown() {
+            var dropdownOptions = document.getElementById('dropdownOptions');
+            dropdownOptions.classList.toggle('hidden');
+        }
+
+        // Function to show Heart content and hide Brain content
+        function showJava() {
+            document.getElementById('javaContent').style.display = 'block';
+            document.getElementById('pythonContent').style.display = 'none';
+            document.getElementById('selectedLanguage').textContent = 'Heart';
+            toggleDropdown(); // Hide dropdown after selection
+        }
+
+        // Function to show Brain content and hide Heart content
+        function showPython() {
+            document.getElementById('javaContent').style.display = 'none';
+            document.getElementById('pythonContent').style.display = 'block';
+            document.getElementById('selectedLanguage').textContent = 'Brain';
+            toggleDropdown(); // Hide dropdown after selection
+        }
+
+        // Close dropdown when clicking outside of it
+        window.addEventListener('click', function (event) {
+            var dropdownBtn = document.getElementById('dropdownBtn');
+            var dropdownOptions = document.getElementById('dropdownOptions');
+            if (!dropdownBtn.contains(event.target) && !dropdownOptions.contains(event.target)) {
+                dropdownOptions.classList.add('hidden');
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- -----------------------Coupon Codes----------------------------------------- -->
+
+
+    <section class="darkable dimskyblue mb-16">
+        <h1 class="darkable text-gray-900 text-3xl title-font font-medium items-center text-center pt-4">Coupon Codes</h1>
+        <div class="flex items-center justify-center">
+
+            <div class="flex-col items-center justify-center">
+                <div class="flex">
+                    <div
+                        class="flex lg:flex-row flex-col p-4 space-x-4 space-y-4 max-w-7xl justify-around w-full h-auto lg:h-60 items-center">
+                        <div
+                            class="darkable darkhower border rounded h-40 w-[100%] md:w-72 flex items-center justify-center ml-4 lg:px-0 px-6 bg-white shadow-xl md:mt-4">
+                            <div class="flex-col space-y-2 items-center px-0 md:px-6">
+                                <div class="flex items-center justify-between space-x-6">
+                                    <div class="flex items-center space-x-1">
+                                        <div class="text-lg font-medium text-violet-500"><img class="h-10 w-10"
+                                                src="../Images/online-class.png" alt="online" srcset=""></div>
+                                        <div class="text-sm font-medium text-gray-500">Online</div>
+                                    </div>
+                                    <div class="text-xs bg-gray-200 px-2 py-0.5 rounded-2xl text-gray-400 font-medium">
+                                        6 Months</div>
+                                </div>
+                                <div class="text-xl font-bold">CBCAOL5024</div>
+                                <div class="font-bold text-green-500 flex items-center space-x-1">
+                                    <div class="text-xl"><ion-icon name="trending-down-outline"></ion-icon></div>
+                                    <div class="text-sm">10% discount</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="darkable darkhower border rounded h-40 w-[100%] md:w-72 flex items-center justify-center ml-4 lg:px-0 px-6 bg-white shadow-xl">
+                            <div class="flex-col space-y-2 items-center px-0 md:px-6">
+                                <div class="flex items-center justify-between space-x-6">
+                                    <div class="flex items-center space-x-1">
+                                        <div class="text-lg font-medium text-violet-500"><img class="h-10 w-10"
+                                                src="../Images/live.png" alt="" srcset=""></div>
+                                        <div class="text-sm font-medium text-gray-500">Live</div>
+                                    </div>
+                                    <div class="text-xs bg-gray-200 px-2 py-0.5 rounded-2xl text-gray-400 font-medium">
+                                        6 Months</div>
+                                </div>
+                                <div class="text-xl font-bold">CBCALV5024</div>
+                                <div class="font-bold text-green-500 flex items-center space-x-1">
+                                    <div class="text-xl"><ion-icon name="trending-down-outline"></ion-icon></div>
+                                    <div class="text-sm">10% discount</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="darkable darkhower border rounded h-40 w-[100%] md:w-72 flex items-center justify-center ml-4 lg:px-0 px-6 bg-white shadow-xl">
+                            <div class="flex-col space-y-2 items-center px-0 md:px-6">
+                                <div class="flex items-center justify-between space-x-6">
+                                    <div class="flex items-center space-x-1">
+                                        <div class="text-lg font-medium text-violet-500"><img class="h-10 w-10"
+                                                src="../Images/classroom.png" alt="" srcset=""></div>
+                                        <div class="text-sm font-medium text-gray-500">Hospital</div>
+                                    </div>
+                                    <div class="text-xs bg-gray-200 px-2 py-0.5 rounded-2xl text-gray-400 font-medium">
+                                        6 Months</div>
+                                </div>
+                                <div class="text-xl font-bold">CBCACL5024</div>
+                                <div class="font-bold text-green-500 flex items-center space-x-1">
+                                    <div class="text-xl"><ion-icon name="trending-down-outline"></ion-icon></div>
+                                    <div class="text-sm">₹1000 discount</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://kit.fontawesome.com/290d4f0eb4.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <button class="toggle-theme" onclick="showTheme()">
+        <i id="theme-icon" class="fas fa-sun"></i>
+        <!-- <h3>Theme</h3> -->
+    </button>
+    
+
+    
+
+
+    
+
+
+
+
+
+
+
+    
+
+    <!-- https://dash.elfsight.com/widget/9ccaa9de-fa46-4379-9431-ad58d0b339ac -->
+
+
+
+    <!-- -----------------INSTAGRAM CHAT------------------------------ -->
+
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <div class="elfsight-app-b4b2adc8-cf03-45c3-aa6c-f8f54be3e155" data-elfsight-app-lazy></div>
+
+    <!-- https://dash.elfsight.com/widget/b4b2adc8-cf03-45c3-aa6c-f8f54be3e155 -->
+
+
+
+    <!-- ------------------TELEGRAM CHAT------------------------------- -->
+
+
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <div class="elfsight-app-e681f93c-86e6-49a1-b17b-aca8b8e85fde" data-elfsight-app-lazy></div>
+
+    <!-- https://dash.elfsight.com/widget/e681f93c-86e6-49a1-b17b-aca8b8e85fde -->
+
+
+
+
+
+
+
+
+    <!-- --------------------Footer------------------------ -->
+    <footer class="darkable text-gray-300 body-font footer darkable">
+        <hr class="darkable absolute-top-hr">
+        <div class="darkable  justify-between container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="darkable  w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left mt-0">
+                <a class="darkable  flex-wrap title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <img class="darkable  col-span-1 max-h-12 object-contain" src="../Images/logo3-removebg-preview.png" alt="Health Support" width="158" height="48" id="footerlogo">
+                    <span class="darkable  ml-3 text-xl">Health Support</span>
+                </a>
+                <p class="darkable  mt-2 text-sm text-gray-500">Treat Like A Boss With Health Support.</p>
+            </div>
+            <div class="darkable  flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-end">
+                <div class="darkable lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="darkable  title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Pages</h2>
+                    <ul class="darkable  list-none mb-10">
+                        <li><a href="/" class="darkable  text-blue-600">Home</a></li>
+                        <li><a href="#" class="darkable  text-blue-600">Plans</a></li>
+                        <li><a href="/resources" class="darkable  text-blue-600 ">Resources</a></li>
+                        <li><a href="/contact" class="darkable  text-blue-600">Contact</a></li>
+                        <li><a href="/products" class="darkable  text-blue-600">Products</a></li>
+
+                    </ul>
+                </div>
+                <div class="darkable  lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="darkable  title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Social Links</h2>
+                    <ul class="darkable  list-none mb-10">
+                        <li><a class="darkable  text-blue-600">First Link</a></li>
+                        <li><a class="darkable  text-blue-600">Second Link</a></li>
+                        <li><a class="darkable  text-blue-600">Third Link</a></li>
+                        <li><a class="darkable  text-blue-600">Fourth Link</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="darkable absolute-top-hr">
+        <div class="darkable bg-gray-100 darkable">
+            <div class="darkable  container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row text-center">
+                <p class="darkable  text-gray-500 text-sm text-center sm:text-left">Made with ❤️ <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="darkable  text-gray-600 ml-1" target="_blank">by Somnath Kaushik</a></p>
+                <span class="darkable  inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                    <a class="darkable  text-gray-500">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="darkable w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="darkable  ml-3 text-gray-500">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="darkable w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                        </svg>
+                    </a>
+                    <a class="darkable  ml-3 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="darkable  w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="darkable  ml-3 text-gray-500">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="darkable w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+    <!-- -----------Health Support------------------ -->
+
+    <div id="load">
+        <div>H</div>
+        <div>E</div>
+        <div>A</div>
+        <div>L</div>
+        <div>T</div>
+        <div>H</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>S</div>
+        <div>U</div>
+        <div>P</div>
+        <div>P</div>
+        <div>O</div>
+        <div>R</div>
+        <div>T</div>
+        <!-- <div>L</div>
+        <div>A</div>
+        <div>U</div> -->
+    </div>
+
+    <!-- ----------------------Cursor------------------------
+
+    <div id="cursor">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <script src="../Components/Cursor.js"></script> -->
+
+
+
+    <script src="./Placement_script.js"></script>
+    <script src="/public/globalScript.js"></script>
+
+</body>
+
+</html>
+
