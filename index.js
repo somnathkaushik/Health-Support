@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyP = require("body-parser");
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const options = { static: true };
 
 const ejsMate = require('ejs-mate');
@@ -15,7 +15,7 @@ const seedDB = require('./seed');
 const MongoStore = require('connect-mongo');
 const wishlistRoutes = require('./routes/wishlist');
 
-const dbURL = 'mongodb://127.0.0.1:27017/Health-Support';
+const dbURL = 'mongodb+srv://somnath21kaushik:p371RPl1ibMaP68o@health-support.rlf6mp3.mongodb.net';
 
 app.use(bodyP.json());
 
