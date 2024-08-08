@@ -2,6 +2,12 @@ const mongoose = require('mongoose');
 
 const Product = require('./models/Product');
 
+const dbURL = 'mongodb+srv://somnath21kaushik:p371RPl1ibMaP68o@health-support.rlf6mp3.mongodb.net';
+
+mongoose.connect(dbURL)
+    .then(() => console.log('DB Connected'))
+    .catch((err) => console.log(err));
+
 
 const products = [
     {
@@ -60,6 +66,7 @@ async function seedDB(){
     console.log("data seeded successfully");
 }
 
+// seedDB();
 module.exports = seedDB;
 
 
